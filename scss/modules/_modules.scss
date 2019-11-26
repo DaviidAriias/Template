@@ -1,11 +1,36 @@
 //============ Modules SCSS ============
 
+
+//-------- Back Button SCSS
+@import 'back-button/_back-button';
+
+
+//-------- box Main SCSS
+@import 'box-main/_box-container';
+
+
+//-------- Titles SCSS
+@import 'titles/_titles';
+
+
+//-------- Tooltips SCSS
+@import 'tooltips/_tooltips';
+
+
+//-------- Forms SCSS
+@import 'forms/_form';
+
+
 //-------- Confirmations SCSS
 @import 'confirmations/_confirmations';
 
 
-//-------- Forms SCSS
-@import 'forms/_forms';
+//-------- Results SCSS
+@import 'results/_result';
+
+
+//-------- Results SCSS
+@import 'terms/_terms';
 
 
 //-------- Loader SCSS
@@ -15,3 +40,6 @@
 //-------- Modal SCSS
 @import 'modals/_modals';
 
+
+//-------- Support SCSS
+@import 'support/_support';

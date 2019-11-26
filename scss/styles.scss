@@ -12,10 +12,6 @@
 @charset "UTF-8";
 
 
-//-------- Admin SCSS
-@import 'admin/_admin';
-
-
 //-------- Base SCSS
 @import 'base/_base';    
 
@@ -29,5 +25,5 @@
 
 
 //-------- Modules Compiled SCSS //Mediaqueries en esta parte para no tener problemas al compilar todos los SCSS
-@import 'admin/mediaqueries/_mediaqueries'
+@import 'base/mediaqueries/mediaqueries'
 

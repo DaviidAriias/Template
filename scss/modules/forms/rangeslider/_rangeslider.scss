@@ -1,0 +1,117 @@
+//Temporal
+.input{
+    //RangeSliders
+    &.input--rangeSlider{
+        label{
+            margin-bottom: 30px;
+        }
+        //Focus input reset
+        input[type="range"]{
+            &:focus+.rangeslider{
+                .rangeslider__handle{
+                    box-shadow: 1px 1px 1px #ccc;
+                }
+            }
+        }
+        &.input--rangeSliderNumber{
+            .input--rangeSlider__bubble{
+                font-size: $font-p - 4;
+                &::before{
+                    content: "$";
+                    font-size: $font-p - 4;
+                }
+            }
+        }
+        .input__quantityNumbers, .input__quantityTitles{
+            @include prefix((
+                display: flex,
+                align-items: center,
+                justify-content: space-between
+            ), webkit moz ms);
+            width: 100%;
+            margin-bottom: 5px;
+            span, strong{
+                color: $negro-57;
+                font-size: $font-p - 2;
+            }
+            strong{
+                font-weight: bold;
+                color: #a3a3a3;
+            }
+        }
+        .input__quantityTitles{
+            margin-bottom: 0;
+            margin-top: 5px;
+        }
+
+        //RangeSlider Bubble
+        .input--rangeSlider__bubble {
+            display: block;
+            width: 30px;
+            height: 30px;
+            line-height: 20px;
+            padding: 5px;
+            position: absolute;
+            bottom: -90%;
+            margin-bottom: 25px;
+            margin-left: -15px;
+            text-align: center;
+            border-radius: 50px;
+            background-color: $gris-a7;
+
+            font-size: $font-p - 2;
+            color: #fff;
+            &:after{
+                content: "";
+                border-width: 11px;
+                border-style: solid;
+                border-color: transparent;
+                display: block;
+                margin: auto;
+                width: 1px;
+                position: absolute;
+                bottom: -6px;
+                left: 50%;
+
+                border: 10px solid $gris-a7;
+                border-bottom: none;
+                border-left-color: transparent;
+                border-right-color: transparent;
+
+                @include prefix((
+                    transform: translateX(-50%)
+                ), webkit mox ms);
+            }
+        }
+
+        //Rangeslider bar
+        .rangeslider{
+            &.rangeslider--horizontal{
+                height: 6px;
+                border: 0;
+                background-color: $gris-cc;
+                box-shadow: none;
+            }
+            .rangeslider__fill{
+                background-color: $gris-a7;
+                box-shadow: none;
+            }
+        }
+
+        //RangeSlider Handle
+        .rangeslider__handle{
+            background-image: none;
+            background: #fff;
+            width: 20px;
+            height: 10px;
+            border-radius: 25px;
+            top: -2px;
+            box-shadow: 1px 1px 1px #ccc;
+            border: 0;
+            outline: none;
+            &::after{
+                display: none;
+            }
+        }
+    }
+}

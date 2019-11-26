@@ -37,6 +37,7 @@
                                 </div>
                                 <div class="optionCard__image"></div>
                                 <a href="javascript:void(0)" class="optionCard__seeMore clicked" id="seemore--firstCard"> <span class="icon-dv-arrowDownBG icon"></span>Ver más</a>
+                                <a href="javascript:void(0)" class="optionCard__seeMore clicked" id="seeless--firstCard" style="display: none;"> <span class="icon-dv-arrowDownBG icon icon--isToggle"></span>Ver menos</a>
                             </label>
                             <div class="optionCard__extraInfo optionCard__extraInfo--toggle" id="firstCard" style="display: none;">
                                 <div class="item item--typeColumn">
@@ -60,6 +61,7 @@
                                 </div>
                                 <div class="optionCard__image"></div>
                                 <a href="javascript:void(0)" class="optionCard__seeMore clicked" id="seemore--secondCard"> <span class="icon-dv-arrowDownBG icon"></span>Ver más</a>
+                                <a href="javascript:void(0)" class="optionCard__seeMore clicked" id="seeless--secondCard" style="display: none;"> <span class="icon-dv-arrowDownBG icon icon--isToggle"></span>Ver menos</a>
                             </label>
                             <div class="optionCard__extraInfo optionCard__extraInfo--toggle" id="secondCard" style="display: none;">
                                 <div class="item item--typeColumn">
@@ -78,14 +80,25 @@
         <!-- Contenedor y Botones genericos - Siempre poner los botones dentro de contButtons -->
         <div class="contButtons">
             <button type="button" class="button button--secondary button--back">Regresar</button>
-            <button type="button" class="button button--primary" onclick="window.location.href='6-Confirmacion.html'">Continuar</button>
+            <button type="button" class="button button--primary">Continuar</button>
         </div>
         <!-- Contenedor y Botones genericos -->
 
     </section>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/main.js"></script>
+    <script type="text/javascript">
+        document.getElementById('seemore--firstCard').onclick=function(){
+            this.style.display = 'none';
+            document.getElementById('seeless--firstCard').style.display = '';
+            document.getElementById('firstCard').style.display = '';
+        }
+
+        document.getElementById('seeless--firstCard').onclick=function(){
+            this.style.display = 'none';
+            document.getElementById('seemore--firstCard').style.display = '';
+            document.getElementById('firstCard').style.display = 'none';
+        }
+    </script>
 </body>
 
 </html>

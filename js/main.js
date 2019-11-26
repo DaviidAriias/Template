@@ -1,114 +1,66 @@
-//Document Ready - Validation
-$(document).ready(function(){
-    console.log('JS Loaded - Everything ok!');    
+//Document Ready - Validación DOM
+document.addEventListener("DOMContentLoaded", function() {
+    console.log('JS Loaded - Everything OK!');
 });
+
+
+//-------------------- Variable body usada multiples veces en la ejecución de modales
+var body = document.getElementsByTagName('body')[0];
 
 
 //-------------------- Overlay Estudio de crédito
-$('#triggerModalStudy').click(function(){
-    $('#StudyProcess').addClass('contStudyProcess--isShowed');
-    $('body').addClass('is--scrollLocked');
-});
+document.getElementById('triggerModalStudy').onclick=function(){
+    document.getElementById('StudyProcess').classList.add('contStudyProcess--isShowed');
+    body.classList.add('is--scrollLocked');
+}
 
 
 //-------------------- Overlay Modal
-$('#triggerModal').click(function(){
-    $('#modalDefault').addClass('contModal--isShowed');
-    $('body').addClass('is--scrollLocked');
-});
+document.getElementById('triggerModal').onclick=function(){
+    document.getElementById('modalDefault').classList.add('contModal--isShowed');
+    body.classList.add('is--scrollLocked');
+}
 
-$('#triggerModalClose').click(function(){
-    $('#modalDefault').removeClass('contModal--isShowed');
-    $('body').removeClass('is--scrollLocked');
-});
+document.getElementById('triggerModalClose').onclick=function(){
+    document.getElementById('modalDefault').classList.remove('contModal--isShowed');
+    body.classList.remove('is--scrollLocked');
+}
 
 
 //-------------------- Overlay Canguro
-$('#triggerCanguro').click(function(){
-    $('#contCanguro').addClass('contCanguroMain--iscanguroShowed');
-    $('body').addClass('is--scrollLocked');
-});
+document.getElementById('triggerCanguro').onclick=function(){
+    document.getElementById('contCanguro').classList.add('contCanguroMain--iscanguroShowed');
+    body.classList.add('is--scrollLocked');
+}
 
-$('#triggerCanguroClose, #closeCanguro').click(function(){
-    $('#contCanguro').removeClass('contCanguroMain--iscanguroShowed');
-    $('body').removeClass('is--scrollLocked');
-});
+document.getElementById('triggerCanguroClose').onclick=function(){
+    document.getElementById('contCanguro').classList.remove('contCanguroMain--iscanguroShowed');
+    body.classList.remove('is--scrollLocked');
+}
+
+document.getElementById('closeCanguro').onclick=function(){
+    document.getElementById('contCanguro').classList.remove('contCanguroMain--iscanguroShowed');
+    body.classList.remove('is--scrollLocked');
+}
 
 
 //-------------------- Mostrar Direccion
-$('#triggerChangeAddress').click(function(){
-    $(this).hide();
-    $('#adressDefault').hide();
-    $('#adressAltern').show();
-});
-
-
-//-------------------- Mostrar datos ocultos confirmación
-$('#result__ConfirToggle').click(function(){
-    $('.result__Confir__item--hidden').slideToggle();
-    $('.result__ConfirButton--more').toggle();
-    $('.result__ConfirButton--less').toggle();
-    $('.result__ConfirButton--icon').toggleClass('icon-dv-showMore');
-    $('.result__ConfirButton--icon').toggleClass('icon-dv-showLess');
-});
-
-
-//-------------------- Mostrar datos tarjetas tipo Toggle
-$('#seemore--firstCard').click(function(){
-  $(this).toggleClass('clicked');
-  $('#firstCard').slideToggle();
-  if ( $("#seemore--firstCard").hasClass("clicked") ) {
-    $("#seemore--firstCard").text("");
-    $("#seemore--firstCard").append( "<span></span> Ver más" );;
-    $(this).find('span').addClass('icon-dv-arrowDownBG icon');
-  }
-  else {
-    $("#seemore--firstCard").text("");
-    $("#seemore--firstCard").append( "<span></span> Ver menos" );
-    $(this).find('span').toggleClass('icon-dv-arrowDownBG icon');
-    $(this).find('span.icon').toggleClass('icon--isToggle');
-  }
-});
-
-$('#seemore--secondCard').click(function(){
-  $(this).toggleClass('clicked');
-  $('#secondCard').slideToggle();
-  if ( $("#seemore--secondCard").hasClass("clicked") ) {
-    $("#seemore--secondCard").text("");
-    $("#seemore--secondCard").append( "<span></span> Ver más" );;
-    $(this).find('span').addClass('icon-dv-arrowDownBG icon');
-  }
-  else {
-    $("#seemore--secondCard").text("");
-    $("#seemore--secondCard").append( "<span></span> Ver menos" );
-    $(this).find('span').toggleClass('icon-dv-arrowDownBG icon');
-    $(this).find('span.icon').toggleClass('icon--isToggle');
-  }
-});
-
-//-------------------- Init rangeslider
-var valueBubble = '<output class="input--rangeSlider__bubble" />';
-
-function updateValueBubble(pos, value, context) {
-  pos = pos || context.position;
-  value = value || context.value;
-  var $valueBubble = $('.input--rangeSlider__bubble', context.$range);
-  var tempPosition = pos + context.grabPos;
-  var position = (tempPosition <= context.handleDimension) ? context.handleDimension : (tempPosition >= context.maxHandlePos) ? context.maxHandlePos : tempPosition;
-
-  if ($valueBubble.length) {
-    $valueBubble[0].style.left = Math.ceil(position) + 'px';
-    $valueBubble[0].innerHTML = value;
-  }
+document.getElementById('triggerChangeAddress').onclick=function(){
+    document.getElementById('triggerChangeAddress').style.display = 'none';
+    document.getElementById('adressDefault').style.display = 'none';
+    document.getElementById('adressAltern').style.display = ''; //vacio para que tome el flex que trae por defecto
 }
 
-$('input[type="range"]').rangeslider({
-  polyfill: false,
-  onInit: function() {
-    this.$range.append($(valueBubble));
-    updateValueBubble(null, null, this);
-  },
-  onSlide: function(pos, value) {
-    updateValueBubble(pos, value, this);
-  }
-});
+
+//-------------------- Mostrar datos ocultos confirmación y resultados
+document.getElementById('result__ConfirToggleOpen').onclick=function(){
+    this.style.display = 'none';
+    document.getElementById('boxResultConfirmHidden').style.display = 'block';
+    document.getElementById('result__ConfirToggleClose').style.display = '';
+}
+
+document.getElementById('result__ConfirToggleClose').onclick=function(){
+    this.style.display = 'none';
+    document.getElementById('boxResultConfirmHidden').style.display = 'none';
+    document.getElementById('result__ConfirToggleOpen').style.display = '';
+}

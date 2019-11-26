@@ -1,0 +1,45 @@
+//Box general - General Container
+.contMainApp{
+    display: block;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    position: relative;
+    overflow-y: auto;
+    padding-bottom: 3%;
+    text-align: center;
+
+    min-height: 100vh;
+    //Fluid Atencion en Línea / Support
+    &--Fluid{
+        padding-bottom: 110px;
+    }
+}
+
+//Container Box - Shadows - Padding - Background
+.contBox{
+    display: block;
+    border-radius: 6px;
+
+    width: 90%;
+    margin: 20px auto 0;
+    position: relative;
+
+    padding: 15px;
+    background-color: $blanco-f8;
+    @include prefix((
+        box-shadow: 1px 3px 5px #0000002b
+    ), webkit moz ms);
+
+    transition-duration: .2s;
+    &--boxConfirm{
+        padding-top: 40px;
+    }
+    &--noBackg{
+        background-color: transparent;
+        box-shadow: inherit;
+    }
+    &--noPadding{
+        padding: 0;
+    }
+}

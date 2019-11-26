@@ -1,0 +1,49 @@
+//Formularios
+form {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    transition-duration: .3s;
+    //Container Iputs - !Importante!
+    .input{
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        margin-bottom: 15px;
+        &:last-of-type{
+            margin-bottom: 0;
+        }
+        //Spans
+        span{
+            display: inline-block;
+            font-size: $font-p;
+            color: $negro-57;
+        }
+        
+        &--otp{
+            input{
+                text-align: center;
+                letter-spacing: 5px;
+                font-weight: bold;
+                color: $negro-57;
+                font-size: $font-p + 4;
+            }
+        }
+    }
+}
+
+//Labels Inputs - Dejar por fuera para evitar complicaciones con otros labels como Radiobuttons o Checkbox
+label, .label{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 5px;
+    position: relative;
+
+    font-family: $roboto;
+    font-size: $font-p;
+    color: $negro-57;
+    text-align: justify;
+    strong{
+        font-weight: bold;
+    }
+}
