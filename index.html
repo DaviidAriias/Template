@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <section class="contMainApp contMainApp--Fluid">
+    <section class="container container--Fluid">
         
         <!-- Botón "atrás" Mobile -->
         <a href="javascript:void(0)" class="btnBack">
@@ -27,6 +27,7 @@
         <!-- Tracking alterno - clase: dataNav__step--complete -->
         <div class="trackingMain">
             <div class="trackingMain__dataNav">
+                    <!-- No se necesita poner números en el tracking, van automaticos por CSS -->
                 <a href="javascript:void(0)" class="dataNav__step dataNav__step--complete"></a>
                 <a href="javascript:void(0)" class="dataNav__step dataNav__step--complete"></a>
                 <a href="javascript:void(0)" class="dataNav__step"></a>
@@ -35,7 +36,7 @@
         </div>
         <!-- data-navn fin -->
 
-        <!-- Tracking Alterno - clase: dataNav__step--active -->
+        <!-- Tracking Alterno - clase: dataNav__step--active solo se activa uno, no es como el tracking principal donde trae los ya realizadoss -->
         <div class="trackingAlter">
             <div class="trackingAlter__dataNav">
                 <a href="javascript:void(0)" class="dataNav__step"></a>
@@ -50,16 +51,16 @@
         <!-- Contenedor y Botones genericos - Siempre poner los botones dentro de contButtons -->
         <div class="contButtons contButtons--noMrgn">
             <button type="button" class="button button--secondary button--back">Regresar</button>
-            <button type="button" class="button button--primary" id="triggerModalStudy">Estudio</button>
-            <button type="button" class="button button--primary" id="triggerModal">Modal</button>
-            <button type="button" class="button button--primary" id="triggerCanguro">Canguro</button>
+            <button type="button" class="button button--primary" onclick="showModalStudy()">Estudio</button>
+            <button type="button" class="button button--primary" onclick="showModal()">Modal</button>
+            <button type="button" class="button button--primary" onclick="showKangaroo()">Canguro</button>
         </div>
         <!-- Fin Contenedor y Botones genericos -->
 
-        <!-- Formularios -->
         <div class="contBox">
             <div class="container">
-                <form action="">
+                <!-- Formularios -->
+                <form>
                     <div class="input">
                         <label for="ingresos-mensuales">¿Cuál es el <strong>valor total</strong> de sus ingresos mensuales?</label>
                         <input type="number" id="ingresos-mensuales" value="" class="input--alert">
@@ -95,33 +96,7 @@
                             <input type="number" placeholder="Ext.">
                         </div>
                     </div>
-                    <!--
-                    <div class="input input--rangeSlider">
-                        <label for="inputRange">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum aliquam eos recusandae doloribus. Accusantium dolore, <strong>corporis id consequuntur praesentium</strong> laboriosam dicta?</label>
-                        <div class="input__quantityNumbers"><strong>1</strong><strong>50</strong></div>
-                        <input id="inputRange" type="range" min="1" max="50" value="10">
-                        <div class="input__quantityTitles"><span>Mes</span><span>Meses</span></div>
-                    </div>
                     
-                    <div class="input input--rangeSlider input--rangeSliderNumber">
-                        <label for="inputRange2">Lorem ipsum dolor sit <strong>amet consectetur adipisicing elit</strong>. Nulla, et ipsam enim reprehenderit id ad.</label>
-                        <div class="input__quantityNumbers"><strong>1</strong><strong>100</strong></div>
-                        <input id="inputRange2" type="range" min="1" max="100" value="50">
-                        <div class="input__quantityTitles">
-                            <span>Millón</span>
-                            <span>Millones
-                                <a href="javascript:void(0)" class="buttonTooltip buttonTooltip--textPosition">
-                                    <span class="icon-dv-tooltipAsk"></span>
-                                </a>
-                                <div class="tooltip">
-                                    <p>
-                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam esse modi ipsam ea labore!
-                                    </p>
-                                </div>
-                            </span>
-                        </div>
-                    </div>
-                    -->
                     <div class="input">
                         <label for="actividad-laboral">¿Cuál es su actividad laboral actual?</label>
                         <select name="" id="actividad-laboral">
@@ -177,7 +152,7 @@
                     <div class="input">
                         <label for="adressDefault">¿Cuál es su dirección de residencia?</label>
                         <input type="text" id="adressDefault" value="Carrera 9 # 116 - 08" disabled>
-                        <a href="javascript:void(0)" title="Editar" class="input__buttonAction" id="triggerChangeAddress"><span class="icon-dv-edit"></span></a>
+                        <a href="javascript:void(0)" title="Editar" class="input__buttonAction" id="triggerChangeAddress" onclick="chengeAddress()"><span class="icon-dv-edit"></span></a>
 
                         <div class="input--fluidBigger" id="adressAltern" style="display: none;">
                             <select name="">
@@ -253,11 +228,11 @@
                             </p>
                         </div>
                     </div>
-                    <a href="javacript:void(0)" class="result__ConfirToggle" id="result__ConfirToggleOpen">
+                    <a href="javacript:void(0)" class="result__ConfirToggle" id="result__ConfirToggleOpen" onclick="seeMoreDetails()">
                         <span class="result__ConfirButton--more">Más detalles</span>
                         <span class="result__ConfirButton--icon icon-dv-showMore"></span>
                     </a>
-                    <a href="javacript:void(0)" class="result__ConfirToggle" id="result__ConfirToggleClose" style="display: none;">
+                    <a href="javacript:void(0)" class="result__ConfirToggle" id="result__ConfirToggleClose" onclick="seeLessDetails()" style="display: none;">
                         <span class="result__ConfirButton--less">Menos detalles</span>
                         <span class="result__ConfirButton--icon icon-dv-showLess"></span>
                     </a>
@@ -290,41 +265,39 @@
 
         <!-- Firma y Autenticación -->
         <div class="contBox">
-            <div class="container container__results">
-                <h1 class="center noMrgnTop">Marque las siguientes opciones para <br> continuar con el proceso</h1>
+            <h1 class="center noMrgnTop">Marque las siguientes opciones para <br> continuar con el proceso</h1>
 
-                <form action="">
-                    <div class="input">
-                        <label class="checkbox">
-                            Manifiesto que he leído y acepto firmar el <a href="javascript:void(0)">Pagaré</a>.  
-                            <input type="checkbox">
-                            <div class="checkbox__indicator"></div>
-                        </label>
-                    </div>
-                    <div class="input">
-                        <label class="checkbox">
-                            Autorizo a Davivienda a <a href="javascript:void(0)" class="buttonTooltip">debitar automáticamente</a> la cuota de mi crédito de la cuenta seleccionada para el desembolso.
-                            <input type="checkbox">
-                            <div class="checkbox__indicator"></div>
-                            <div class="tooltip">
-                                <p>
-                                    La cuota mensual de su crédito será debitada automáticamente de la cuenta
-                                    que usted seleccione para este fin. <br>
-                                    En caso de no contar con recursos en la cuenta autorizada, Davivienda debitará
-                                    los recursos de otras cuentas o depósitos que posea a su nombre con el Banco.
-                                </p>
-                            </div>
-                        </label>
-                    </div>
-                    <div class="input">
-                        <label class="checkbox">
-                            Manifiesto que he leído y acepto firmar la <a href="javascript:void(0)">declaración de asegurabilidad</a>. 
-                            <input type="checkbox">
-                            <div class="checkbox__indicator"></div>
-                        </label>
-                    </div>
-                </form>
-            </div>
+            <form>
+                <div class="input">
+                    <label class="checkbox">
+                        Manifiesto que he leído y acepto firmar el <a href="javascript:void(0)">Pagaré</a>.  
+                        <input type="checkbox">
+                        <div class="checkbox__indicator"></div>
+                    </label>
+                </div>
+                <div class="input">
+                    <label class="checkbox">
+                        Autorizo a Davivienda a <a href="javascript:void(0)" class="buttonTooltip">debitar automáticamente</a> la cuota de mi crédito de la cuenta seleccionada para el desembolso.
+                        <input type="checkbox">
+                        <div class="checkbox__indicator"></div>
+                        <div class="tooltip">
+                            <p>
+                                La cuota mensual de su crédito será debitada automáticamente de la cuenta
+                                que usted seleccione para este fin. <br>
+                                En caso de no contar con recursos en la cuenta autorizada, Davivienda debitará
+                                los recursos de otras cuentas o depósitos que posea a su nombre con el Banco.
+                            </p>
+                        </div>
+                    </label>
+                </div>
+                <div class="input">
+                    <label class="checkbox">
+                        Manifiesto que he leído y acepto firmar la <a href="javascript:void(0)">declaración de asegurabilidad</a>. 
+                        <input type="checkbox">
+                        <div class="checkbox__indicator"></div>
+                    </label>
+                </div>
+            </form>
         </div>
         <!-- Fin - firma y Autenticación -->
 
@@ -463,7 +436,7 @@
                 </p>
             </div>
             <div class="contButtons contButtons--sameWidth">
-                <button type="button" class="button button--secondary" id="triggerModalClose">Cancelar</button>
+                <button type="button" class="button button--secondary" onclick="hideModal()">Cancelar</button>
                 <button type="button" class="button button--primary">Sí, si quiero</button>
             </div>
         </div>
@@ -479,7 +452,7 @@
                     <img src="images/icon-dv-figureKangaroo.svg" alt="icon">
                     <h2 class="noMrgn">Seguro Vida Online</h2>
                 </div>
-                <a href="javascript:void(0)" class="header__closeCanguro" id="closeCanguro" title="Cerrar"><span class="icon-dv-closeKangaroo"></span></a>
+                <a href="javascript:void(0)" class="header__closeCanguro" onclick="hideKangaroo()" title="Cerrar"><span class="icon-dv-closeKangaroo"></span></a>
             </div>
 
             <div class="containerCanguro__content">
@@ -499,7 +472,7 @@
                 </div>
                 <a href="javascript:void(0)" class="content__link">Ver Términos y Condiciones</a>
                 <div class="contButtons contButtons--sameWidth">
-                    <button type="button" class="button button--secondary" id="triggerCanguroClose">Omitir</button>
+                    <button type="button" class="button button--secondary" onclick="hideKangaroo()">Omitir</button>
                     <button type="button" class="button button--primary">Adquirir</button>
                 </div>
                 <div class="contTextInformation contTextInformation--noMrgnTop contTextInformation--mrgnBottom">
@@ -511,7 +484,7 @@
     </section>
     <!-- Fin Canguros -->
 
-    <!-- Atención en línea - recordar poner la clase ".contMainApp--Fluid" al ".contMainApp"-->
+    <!-- Atención en línea - recordar poner la clase ".container--Fluid" al ".container"-->
     <a href="javascript:void(0)" class="support">
         <span class="icon-dv-support"></span>
         <span>Atención en Línea</span>

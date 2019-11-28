@@ -1,41 +1,16 @@
-//Containers - Importante en todo los flujos
+//Containers - Importante en todo los flujos - Contenedor principal
 .container {
-    display: inline-block;
+    display: block;
     width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
     padding: 0;
-    max-width: inherit;
     text-align: center;
     position: relative;
-    //Beneficios y Caracteristicas
-    &--benefits{
-        display: inline-block;
-        width: 100%;
-        .benefits__item{
-            @include prefix((
-                display: flex,
-                align-items: center,
-                justify-content: flex-start
-            ), webkit mox ms);
-            width: 100%;
-            margin: 30px 0;
-            &:first-of-type{
-                margin: 0 0;
-            }
-            img{
-                display: inline-block;
-                width: 100%;
-                max-width: 25px;
-            }
-            p{
-                font-family: $roboto;
-                font-size: $font-p;
-                font-weight: 400;
-                padding-left: 15px;
-                text-align: left;
-                color: $negro-57;
-                line-height: 1.3;
-            }
-        }
+
+    //Fluid Atencion en Línea / Support
+    &--Fluid{
+        padding-bottom: 110px;
     }
     
     .container--intBackGray{

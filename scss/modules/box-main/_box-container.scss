@@ -1,24 +1,6 @@
-//Box general - General Container
-.contMainApp{
-    display: block;
-    width: 100%;
-    max-width: 850px;
-    margin: 0 auto;
-    position: relative;
-    overflow-y: auto;
-    padding-bottom: 3%;
-    text-align: center;
-
-    min-height: 100vh;
-    //Fluid Atencion en Línea / Support
-    &--Fluid{
-        padding-bottom: 110px;
-    }
-}
-
 //Container Box - Shadows - Padding - Background
 .contBox{
-    display: block;
+    display: inline-block;
     border-radius: 6px;
 
     width: 90%;

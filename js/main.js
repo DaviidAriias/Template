@@ -9,43 +9,38 @@ var body = document.getElementsByTagName('body')[0];
 
 
 //-------------------- Overlay Estudio de crédito
-document.getElementById('triggerModalStudy').onclick=function(){
-    document.getElementById('StudyProcess').classList.add('contStudyProcess--isShowed');
+function showModalStudy(){
+    document.getElementById('StudyProcess').classList.add('contStudyProcess--isShow');
     body.classList.add('is--scrollLocked');
 }
 
 
 //-------------------- Overlay Modal
-document.getElementById('triggerModal').onclick=function(){
-    document.getElementById('modalDefault').classList.add('contModal--isShowed');
+function showModal(){
+    document.getElementById('modalDefault').classList.add('contModal--isShow');
     body.classList.add('is--scrollLocked');
 }
 
-document.getElementById('triggerModalClose').onclick=function(){
-    document.getElementById('modalDefault').classList.remove('contModal--isShowed');
+function hideModal(){
+    document.getElementById('modalDefault').classList.remove('contModal--isShow');
     body.classList.remove('is--scrollLocked');
 }
 
 
 //-------------------- Overlay Canguro
-document.getElementById('triggerCanguro').onclick=function(){
-    document.getElementById('contCanguro').classList.add('contCanguroMain--iscanguroShowed');
+function showKangaroo(){
+    document.getElementById('contCanguro').classList.add('contCanguroMain--iscanguroShow');
     body.classList.add('is--scrollLocked');
 }
 
-document.getElementById('triggerCanguroClose').onclick=function(){
-    document.getElementById('contCanguro').classList.remove('contCanguroMain--iscanguroShowed');
-    body.classList.remove('is--scrollLocked');
-}
-
-document.getElementById('closeCanguro').onclick=function(){
-    document.getElementById('contCanguro').classList.remove('contCanguroMain--iscanguroShowed');
+function hideKangaroo(){
+    document.getElementById('contCanguro').classList.remove('contCanguroMain--iscanguroShow');
     body.classList.remove('is--scrollLocked');
 }
 
 
 //-------------------- Mostrar Direccion
-document.getElementById('triggerChangeAddress').onclick=function(){
+function chengeAddress(){
     document.getElementById('triggerChangeAddress').style.display = 'none';
     document.getElementById('adressDefault').style.display = 'none';
     document.getElementById('adressAltern').style.display = ''; //vacio para que tome el flex que trae por defecto
@@ -53,14 +48,14 @@ document.getElementById('triggerChangeAddress').onclick=function(){
 
 
 //-------------------- Mostrar datos ocultos confirmación y resultados
-document.getElementById('result__ConfirToggleOpen').onclick=function(){
-    this.style.display = 'none';
+function seeMoreDetails(){
+    document.getElementById('result__ConfirToggleOpen').style.display = 'none';
     document.getElementById('boxResultConfirmHidden').style.display = 'block';
     document.getElementById('result__ConfirToggleClose').style.display = '';
 }
 
-document.getElementById('result__ConfirToggleClose').onclick=function(){
-    this.style.display = 'none';
+function seeLessDetails(){
+    document.getElementById('result__ConfirToggleClose').style.display = 'none';
     document.getElementById('boxResultConfirmHidden').style.display = 'none';
     document.getElementById('result__ConfirToggleOpen').style.display = '';
 }
