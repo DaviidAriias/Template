@@ -16,7 +16,7 @@
     }
     &:hover~.tooltip {
         opacity: 1 !important;
-        background-color: purple;
+        background-color: royalblue;
     }
 
     //Posicionamiento
@@ -69,13 +69,5 @@
     }
     &--fullWidth{
         width: 100%;
-    }
-}
-
-body{
-    &:hover{
-        .tooltip {
-            opacity: 0 !important;
-        }
     }
 }
