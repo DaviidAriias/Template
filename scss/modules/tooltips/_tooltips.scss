@@ -14,9 +14,9 @@
     span{
         font-size: $font-p + 2 !important;
     }
-    &:hover~.tooltip, &:active~.tooltip, &:focus~.tooltip {
+    &:focus~.tooltip {
         opacity: 1 !important;
-        background-color: green;
+        background-color: brown;
     }
 
     //Posicionamiento
