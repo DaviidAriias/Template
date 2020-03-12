@@ -133,6 +133,8 @@ en algunos casos dentro de los mismos */
 .tooltip--moreTop { transform: translateY(-115%); }
 .tooltip--fullWidth { width: 100%; }
 
+body:hover .tooltip { opacity: 0 !important; }
+
 form { display: inline-block; width: 100%; height: auto; transition-duration: .3s; }
 form .input { display: inline-block; width: 100%; position: relative; margin-bottom: 15px; }
 form .input:last-of-type { margin-bottom: 0; }

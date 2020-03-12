@@ -71,3 +71,11 @@
         width: 100%;
     }
 }
+
+body{
+    &:hover{
+        .tooltip {
+            opacity: 0 !important;
+        }
+    }
+}
