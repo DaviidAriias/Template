@@ -59,3 +59,7 @@ function seeLessDetails(){
     document.getElementById('boxResultConfirmHidden').style.display = 'none';
     document.getElementById('result__ConfirToggleOpen').style.display = '';
 }
+
+function hideTooltip(){
+    document.getElementsByClassName("tooltip").style.color = "red";
+}
