@@ -124,7 +124,7 @@ en algunos casos dentro de los mismos */
 
 .buttonTooltip { display: inline-block; width: 16px; height: 16px; position: absolute; top: 50%; bottom: 0; right: 15px; transform: translateY(-50%); }
 .buttonTooltip span { font-size: 16px !important; }
-.buttonTooltip:hover ~ .tooltip { opacity: 1 !important; background-color: royalblue; }
+.buttonTooltip:hover ~ .tooltip { opacity: 1 !important; }
 .buttonTooltip--textPosition { position: relative; top: 2px; bottom: 0; right: 0; left: 0; transform: inherit; }
 
 .tooltip { display: inline-block; width: 80%; max-width: 350px; background-color: #cccccc; border-radius: 6px; padding: 15px; z-index: 9; text-align: justify; position: absolute; top: 50%; left: 0; right: 0; margin: auto; transform: translateY(-50%); box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); transition-duration: .2s; opacity: 0; pointer-events: none; }
