@@ -356,6 +356,7 @@ input[type=date]::-webkit-inner-spin-button { display: none; -webkit-appearance:
 .container--Fluid { padding-bottom: 110px; }
 .container .container--intBackGray { display: block; max-width: 650px; padding: 20px; margin: auto; background-color: #ededed; border-radius: 10px; }
 
+@media (hover: hover) and (pointer: fine) { .buttonTooltip:hover ~ .tooltip { opacity: 1 !important; background-color: #cccccc; } }
 @media (min-width: 50em) { body { background-color: #fff; }
   .btnBack { display: none; }
   .button { font-size: 18px; width: 20%; }
