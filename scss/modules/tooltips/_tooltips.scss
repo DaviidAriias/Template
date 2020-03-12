@@ -16,7 +16,9 @@
     }
     &:hover~.tooltip{
         opacity: 1 !important;
-        background-color: $gris-cc;
+    }
+    &:focus~.tooltip{
+        opacity: 1 !important;
     }
 
     //Posicionamiento
