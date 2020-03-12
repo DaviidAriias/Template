@@ -14,7 +14,7 @@
     span{
         font-size: $font-p + 2 !important;
     }
-    &:focus~.tooltip{
+    &:active~.tooltip, &:hover~.tooltip{
         opacity: 1 !important;
     }
 
