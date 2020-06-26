@@ -63,7 +63,7 @@
                 <form>
                     <div class="input">
                         <label for="ingresos-mensuales">¿Cuál es el <strong>valor total</strong> de sus ingresos mensuales?</label>
-                        <input type="number" id="ingresos-mensuales" value="" class="input--alert">
+                        <input type="number" id="ingresos-mensuales" onfocus="focusIn()" onblur="focusOut()" value="" class="input--alert">
                     </div>
 
                     <div class="input">
@@ -110,7 +110,7 @@
                         <!--  Label de ejemplo, normalmente no llebva tooltip ¡Importante!-->
                         <label for="OTP">OTP:</label>
                         <div class="input">
-                            <input type="text" id="OTP">
+                            <input type="text" onfocus="focusIn()" onblur="focusOut()" id="OTP">
                             <a href="javascript:void(0)" class="buttonTooltip"><span class="icon-dv-tooltipAsk"></span></a>
                             <div class="tooltip">
                                 <p>
@@ -485,7 +485,7 @@
     <!-- Fin Canguros -->
 
     <!-- Atención en línea - recordar poner la clase ".container--Fluid" al ".container"-->
-    <a href="javascript:void(0)" class="support">
+    <a href="javascript:void(0)" class="support" id="support">
         <span class="icon-dv-support"></span>
         <span>Atención en Línea</span>
     </a>

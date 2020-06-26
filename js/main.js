@@ -59,3 +59,14 @@ function seeLessDetails(){
     document.getElementById('boxResultConfirmHidden').style.display = 'none';
     document.getElementById('result__ConfirToggleOpen').style.display = '';
 }
+
+//-------------------- Validar focus input
+function focusIn(){
+    console.log('Focus In');
+    document.getElementById('support').style.position = 'relative';
+}
+
+function focusOut(){
+    console.log('Focus Out');
+    document.getElementById('support').style.position = '';
+}

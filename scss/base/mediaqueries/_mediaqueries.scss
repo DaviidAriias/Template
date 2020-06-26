@@ -3,6 +3,10 @@
 
 }
 
+@media (-moz-touch-enabled: 0), (pointer: fine) {
+    
+}
+
 @media(hover: hover) and (pointer: fine) {
     .buttonTooltip {
         &:hover~.tooltip{
