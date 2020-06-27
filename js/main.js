@@ -61,17 +61,21 @@ function seeLessDetails(){
 }
 
 //-------------------- Validar focus input
-function isMobile() {
-    return(/Android|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) );
-    function focusIn(){
+function focusIn(){
+    if (screen.width<800){
         console.log('Focus In');
         document.getElementById('support').style.position = 'relative';
-    }
-    
-    function focusOut(){
-        console.log('Focus Out');
+    }else{
         document.getElementById('support').style.position = '';
     }
 }
 
-isMobile();
+function focusOut(){
+    if (screen.width<800){
+        console.log('Focus In');
+        document.getElementById('support').style.position = '';
+    }else{
+        document.getElementById('support').style.position = '';
+    }
+    console.log('Focus Out');
+}
