@@ -61,12 +61,39 @@ function seeLessDetails(){
 }
 
 //-------------------- Validar focus input
-function focusIn(){
-    console.log('Focus In');
-    document.getElementById('support').style.position = 'relative';
+if (/android/i.test(userAgent)) {
+    function focusIn(){
+        console.log('Focus In');
+        document.getElementById('support').style.position = 'relative';
+    }
+
+    function focusOut(){
+        console.log('Focus Out');
+        document.getElementById('support').style.position = '';
+    }
 }
 
-function focusOut(){
-    console.log('Focus Out');
-    document.getElementById('support').style.position = '';
+
+if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    function focusIn(){
+        console.log('Focus In');
+        document.getElementById('support').style.position = 'relative';
+    }
+    
+    function focusOut(){
+        console.log('Focus Out');
+        document.getElementById('support').style.position = '';
+    }
+}
+
+if (/windows phone/i.test(userAgent)) {
+    function focusIn(){
+        console.log('Focus In');
+        document.getElementById('support').style.position = 'relative';
+    }
+    
+    function focusOut(){
+        console.log('Focus Out');
+        document.getElementById('support').style.position = '';
+    }
 }
