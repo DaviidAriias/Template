@@ -61,20 +61,8 @@ function seeLessDetails(){
 }
 
 //-------------------- Validar focus input
-if (/android/i.test(userAgent)) {
-    function focusIn(){
-        console.log('Focus In');
-        document.getElementById('support').style.position = 'relative';
-    }
-
-    function focusOut(){
-        console.log('Focus Out');
-        document.getElementById('support').style.position = '';
-    }
-}
-
-
-if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+function isMobile() {
+    return(/Android|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) );
     function focusIn(){
         console.log('Focus In');
         document.getElementById('support').style.position = 'relative';
@@ -86,14 +74,4 @@ if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
     }
 }
 
-if (/windows phone/i.test(userAgent)) {
-    function focusIn(){
-        console.log('Focus In');
-        document.getElementById('support').style.position = 'relative';
-    }
-    
-    function focusOut(){
-        console.log('Focus Out');
-        document.getElementById('support').style.position = '';
-    }
-}
+isMobile();
